@@ -8,6 +8,6 @@
    <li>Variance etc.</li>
    </ul>  
 
-   In case requirement do not match, user can pass a custom script to generate the specific column, it will be saved as a python file in the /col_scripts directory.  
+   In case requirement do not match, user can pass a custom script to generate the specific column, it will be saved as a python file in the **/col_scripts directory.  
 </p>
 
