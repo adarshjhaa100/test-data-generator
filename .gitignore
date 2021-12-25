@@ -1,0 +1,24 @@
+# python bytecode
+__pycache__/
+**/__pycache__/
+
+
+# database
+db.sqlite3
+**/db.sqlite3
+
+# IDE config files
+.vscode/
+# .idea/
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# static files
+**/static/
+
+# django migrations
+**/migrations/
