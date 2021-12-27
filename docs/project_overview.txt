@@ -2,39 +2,31 @@ This project generates test data according to given column configuration.
 
 
 Currently following configurations for columns are supported:
-    Name:                     name of the column
-    Type:                     numeric, Alphanumeric, Character only(for things like name and all), Date etc
-    Subtype 1:                float, string, numeric, binary etc. 
-    Max Length:               max number of Characters/digits
-    Min Length:               min digits
-    Range:                    value Range for numeric values, value range list, character range list(Character in) for each digit of a column        
-    Variance:                 for numbers
-    Unique:                   yes or no
-    Dulication Factor:        if not unique maximum occurence of same value in the column, -1 by default
-    Relation with other cols: Can be related to other column(e.g. one-one, one to many etc )
-                              (May or may not add this)
-    Select from template:     Choose from templates to generate commonly known values such as addresses, Person's name, SSNs,  Phone Numbers etc     
-    Sample Value:             generate value like a given sample value(for example value contains spaces,carriage returns, quotes etc.)  
-    Custom Script:            if the above options don't satisfy the reqirements, add a custom python script
-                              eg: "Unique:1|Duplications:7|MaxLen:10|NotNull:1". These parameters need to be documented before being turned into a script 
-                              or, give a custom python script to generate these values  
+    Name:                       name of the column
+    Type:                       numeric, Alphanumeric, Date etc
+    Subtype 1:                  float, string, integer, inrange, custom type(like Date, array or any other user defined type) etc)  etc. 
+    Max Length:                 max number of Characters/digits
+    Min Length:                 min digits
+    Range:                      value Range for numeric values, value range list, character range list(Character in) for each digit of a column        
+    Variance:                   for numbers
+    Unique:                     yes or no
+    Dulication Factor:          if not unique maximum occurence of same value in the column, -1 by default
+    Relation with other cols:   Can be related to other column(e.g. one-one, one to many etc )
+                                (May or may not add this)
+    colPosn:                    Posn of column in the table
+    Select from template:       Choose from templates to generate commonly known values such as addresses, Person's name, SSNs,  Phone Numbers etc     
+    Sample Value:               generate value like a given sample value(for example value contains spaces,carriage returns, quotes etc.)  
+    Custom Script:              if the above options don't satisfy the reqirements, add a custom python script
+                                eg: "Unique:1|Duplications:7|MaxLen:10|NotNull:1". These parameters need to be documented before being turned into a script 
+                                or, give a custom python script to generate these values  
 
-Step1:
-    => Column configuration can be given using:
-        csv
-        json
-        html form-input    
-    => Other values will have some defaults which needs to be decided     
+It will be ensured that data geenrated will be roughly uniform
 
-Step2:
-    => Once all columns are configured, show the details of all the columns. User can edit the details if want  
-    => Ask for the total count, output format etc.
-    => Ensure that generation is possible(like if unique selected and given range cannot satisfy the unique value) 
-    => Save the results under a given schema set name 
+Data will be generated according to column configs and a url to download will be returned.
 
-Step3: 
-    => Generate values in parallel if possible( for some columns, we need to generate row wise)
-    => For each type of configuration, can create different python scripts.
-    => Save to a given location(FTP, local file system) and share the location with the user.
+Tech Stack:
+    UI: Vue JS or vanilla HTML, CSS, JS 
+    API and Logic: Django
+
 
     

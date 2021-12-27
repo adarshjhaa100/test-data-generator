@@ -1,0 +1,78 @@
+Overall Workflow:
+    Step1:
+        => Column configuration can be given using:
+            csv
+            json
+            html form-input    
+        => Other values will have some defaults which needs to be decided     
+
+    Step2:
+        => Once all columns are configured, show the details of all the columns. User can edit the details if want  
+        => Ask for the total count, output format etc.
+        => Ensure that generation is possible(like if unique selected and given range cannot satisfy the unique value) 
+        => Save the results under a given schema set name 
+
+    Step3: 
+        => Generate values in parallel if possible( for some columns, we need to generate row wise)
+        => For each type of configuration, can create different python scripts.
+        => Save to a given location(FTP, local file system) and share the location with the user.
+
+
+
+Detialed Workflow:
+    Column Config Input:
+        (attribute: type, input-type, input-constraint, additional description)
+
+        name:       string, 
+                    text, 
+                    NotNull
+        type:       string, 
+                    select,
+                    NotNull, 
+                    avaliable values: (Numeric, AlphaNumeric, Decimal), 
+                    column values like date will be Alphanumeric       
+        subtype:    string, 
+                    select,
+                    string by default, 
+                    avaliable values: (int, float, char, string, bool, customType like date etc.),              
+        maxLen:     integer, 
+                    10 by default
+        minLen:     integer, 
+                    0 by default
+        rangetype:  string, 
+                    select,
+                    start-end by default,
+                    List elements: (start-end, from-list, char-from-list) 
+        range:      string, 
+                    text,
+                    NotNull 
+                    takes a list like:['A','B','C','D'] or tuple like: (from, to). 
+        variance:   string,
+                    text,
+                    -1 by default,
+                    Only show if type is Numeric,
+                    Optional Dev
+        colPosn:    integer
+        unique:     string,
+                    text,
+                    NO by default,
+        dupFactor:  string,
+                    text,
+                    1 if unique, -1 if not specified,
+                    max amount of duplicates
+        relation:   string,
+                    text,
+                    None by default,
+                    relation like (1-1, 1-n), 
+                    can chain relationship bw more that 2 cols, for eg for log entries on a particular date, show log with info tag,
+                    Need to analyze some datasets for this
+        template:   string,
+                    select,
+                    None by default,
+                    values like SSN, address or reuse other config columns etc,
+                    Need functionality for creating custom templates,
+                    other attributes will be pre-filled if this is selected  
+        custom:     string,
+                    textarea,
+                    None by default,
+                    For custom sql like queries(simple DDL to be developed)
