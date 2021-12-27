@@ -24,9 +24,17 @@ It will be ensured that data geenrated will be roughly uniform
 
 Data will be generated according to column configs and a url to download will be returned.
 
+Until decided, just create scripts and UI
 Tech Stack:
-    UI: Vue JS or vanilla HTML, CSS, JS 
-    API and Logic: Django
+    UI: 
+        (Vue JS or
+        vanilla HTML, CSS, JS)
+    API and Logic: 
+        (Django or
+        Fast API or
+        django-ninja)
+        with pandas, numpy
+
 
 
     
