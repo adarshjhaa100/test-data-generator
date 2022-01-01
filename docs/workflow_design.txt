@@ -20,6 +20,7 @@ Overall Workflow:
 
 
 Detialed Workflow:
+
     Column Config Input:
         (attribute: type, input-type, input-constraint, additional description)
 
@@ -31,7 +32,7 @@ Detialed Workflow:
                     NotNull, 
                     avaliable values: (Numeric, AlphaNumeric, Decimal), 
                     column values like date will be Alphanumeric       
-        subtype:    string, 
+        subType:    string, 
                     select,
                     string by default, 
                     avaliable values: (int, float, char, string, bool, customType like date etc.),              
@@ -39,7 +40,7 @@ Detialed Workflow:
                     10 by default
         minLen:     integer, 
                     0 by default
-        rangetype:  string, 
+        rangeType:  string, 
                     select,
                     start-end by default,
                     List elements: (start-end, from-list, char-from-list) 
@@ -76,3 +77,47 @@ Detialed Workflow:
                     textarea,
                     None by default,
                     For custom sql like queries(simple DDL to be developed)
+
+    
+    The form configs will be loaded from server(to poplulate options in the form) in the following format:
+    {
+        "colname": [options],
+    } 
+    e.g.: for rangeType, it will be:
+    {
+        "rangeType":[start-end, from-list, char-from-list]
+    }       
+    Additional items can be added to the form config JSON.
+
+
+
+    This will be sent to the server in the following format:
+        {
+            "name":"",
+            "type":"",
+            "subtype":"",
+            "minLen":"",
+            "maxLen":"",
+            "rangeType":"",
+            "range":"",
+            "variance":"",
+            "colPosn":"",
+            "unique":"",
+            "dupFactor":"",
+            "relation":"",
+            "template":"",
+            "custom":""
+        }
+    
+    Logic Design(Python scripts):
+    Note: Use classes to divide a set of functions
+        One master script:
+            which will parse the input and design various conditional statements for different scenarios of data config. It will also be responsible for dividing and combining columns before/after data genration.
+        Common Scripts:
+            Common set of functions like generating data from a-b, word length range, 
+            These would be usd by each worker script
+        Other worker/slave Scripts: 
+            Need to make sure to consider all the config attributes while generating columns
+        
+
+

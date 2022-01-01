@@ -23,5 +23,6 @@ venv/
 # django migrations
 **/migrations/
 
-#sample data file
+# sample data file
 **/sample_data/
+

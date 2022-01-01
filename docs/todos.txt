@@ -1,0 +1,10 @@
+Todos for UI:
+    Create basic HTML, CSS, JS UI for user form input(later use vue JS)
+    The form should generate a JSON string specified using DDL
+
+Todos for Backend:
+    API endpoints - On hold until tech stack decided.
+    DDL:
+        (First Priority) Logic to create columns according to existing attribute config mentioned in /docs/workflow_design.txt
+        Decide on complex attributes like relation, variance etc.
+        SQL type DDL to create cols according to configuration
