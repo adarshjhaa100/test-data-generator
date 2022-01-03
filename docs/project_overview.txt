@@ -35,6 +35,8 @@ Tech Stack:
         django-ninja)
         with pandas, numpy
 
-
-
+Concepts:
+    RNG(Random Generators - Numbers, Strings etc)
+    Generating data with relationship among columns
+    
     
