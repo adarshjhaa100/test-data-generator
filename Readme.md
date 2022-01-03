@@ -1,6 +1,6 @@
 <h1> Test Data Generator </h1>
 <p>
-   Django project for generationg test data according to provided column configurations like:
+   Application for generationg test data according to provided column configurations like:
    <ul>
    <li>Name</li>
    <li>Max Length</li>
