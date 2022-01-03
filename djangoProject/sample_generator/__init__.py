@@ -1,1 +1,0 @@
-''' Sample app for testing out things '''
