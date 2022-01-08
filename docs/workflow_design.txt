@@ -37,9 +37,11 @@ Detialed Workflow:
                     string by default, 
                     avaliable values: (int, float, char, string, bool, customType like date etc.),              
         maxLen:     integer, 
-                    10 by default
+                    10 by default,
+                    Not applicable for Numeric and Decimal
         minLen:     integer, 
-                    0 by default
+                    0 by default,
+                    Not applicable for Numeric and Decimal
         rangeType:  string, 
                     select,
                     start-end by default,

@@ -61,7 +61,7 @@ class SimpleRandomGenerator:
 rng=SimpleRandomGenerator()
 
 for _ in range(200):
-    print(rng.generate_float(10, 1000, 3))
+    print(rng.generate_float(-1000, 1000, 3))
 
 
 # generating codes from 
