@@ -4,12 +4,32 @@ Todos for UI:
 
 Todos for Backend:
     API endpoints - On hold until tech stack decided.
+    (Done) Generic random Generators: 
+        experiments\random_generators.py
     DDL:
         (First Priority) Logic to create columns according to existing attribute config mentioned in /docs/workflow_design.txt
+        For now, design logic for simple columns and ignore the configs like relation, variance etc
+            {
+            "name":"Sample Column 1",
+            "type":"AlphaNumeric",
+            "subtype":"string",
+            "minLen":"5",
+            "maxLen":"20",
+            "rangeType":"predefined",
+            "range":"alphabets",
+            "variance":"ignore",
+            "colPosn":"ignore",
+            "unique":"ignore",
+            "dupFactor":"ignore",
+            "relation":"ignore",
+            "template":"ignore",
+            "custom":"ignore"
+            }
+        
         Decide on complex attributes like relation, variance etc.
         SQL type DDL to create cols according to configuration
     Concepts:
         RNG(Random Generators - Numbers, Strings etc)
         Generating data with relationship among columns
 
-    For now, design logic for simple columns and ignore the configs like relation, variance etc.
+    

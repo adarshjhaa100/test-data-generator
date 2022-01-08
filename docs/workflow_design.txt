@@ -43,11 +43,15 @@ Detialed Workflow:
         rangeType:  string, 
                     select,
                     start-end by default,
-                    List elements: (start-end, from-list, char-from-list) 
+                    List elements: (start-end, from-list, char-from-list, predefined) 
         range:      string, 
                     text,
                     NotNull 
-                    takes a list like:['A','B','C','D'] or tuple like: (from, to). 
+                    takes a list like:['A','B','C','D'] or tuple like: (from, to) or predefined value like "alphabets", "numbers" etc. 
+        format:     string,
+                    text,
+                    None by default,
+                    only applicable in case format is numeric, float or decimal, float
         variance:   string,
                     text,
                     -1 by default,
@@ -64,8 +68,8 @@ Detialed Workflow:
         relation:   string,
                     text,
                     None by default,
-                    relation like (1-1, 1-n), 
-                    can chain relationship bw more that 2 cols, for eg for log entries on a particular date, show log with info tag,
+                    relation like (1-1, 1-n, m-n), ratio(max to max) e.g. 1-7 one value could have at most seven relations 
+                    can chain relationship bw more that 2 cols, e.g. for log entries on a particular date, show log with info tag,
                     Need to analyze some datasets for this
         template:   string,
                     select,
@@ -100,6 +104,7 @@ Detialed Workflow:
             "maxLen":"",
             "rangeType":"",
             "range":"",
+            "format":"",
             "variance":"",
             "colPosn":"",
             "unique":"",
