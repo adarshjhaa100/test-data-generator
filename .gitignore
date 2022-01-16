@@ -25,4 +25,5 @@ venv/
 
 # sample data file
 **/sample_data/
+**/sampleoutput/
 
