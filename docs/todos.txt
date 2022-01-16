@@ -31,5 +31,5 @@ Todos for Backend:
     Concepts:
         RNG(Random Generators - Numbers, Strings etc)
         Generating data with relationship among columns
-
+        Generate data with relationship between tables on a set of keys
     
