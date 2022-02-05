@@ -3,7 +3,7 @@ from simplerandomgenerator import SimpleRandomGenerator
 from datetime import datetime
 import time
 
-NUM_ROWS=20000
+NUM_ROWS=20
 
 class SimpleColConfig():
     
