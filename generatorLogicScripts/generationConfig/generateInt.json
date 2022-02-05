@@ -1,0 +1,11 @@
+{
+    "name": "Generating Int",
+    "minLen": "5",
+    "maxLen": "20",
+    "rangeType": "start-end",
+    "range": {
+        "start":-10000,
+        "end":10000
+    },
+    "noOfRows":10
+}
