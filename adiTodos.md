@@ -1,0 +1,3 @@
+- [X] seperate constants, classes and user of class
+- [ ] seperate generate_config logic similar to col_configs
+- [ ] create packages 

@@ -1,14 +1,13 @@
 import json
 import os
-from simplerandomgenerator import SimpleRandomGenerator
-from datetime import datetime
+from random import sample
 import time
-
-NUM_ROWS=20
+from simplerandomgenerator import SimpleRandomGenerator
 
 class SimpleColConfig():
     
-    def __init__(self, jsonconfig, noofrows) -> None:
+    def __init__(self, json_config_path="sampleconfigs/simpleconfig1.json", noofrows=10) -> None:
+        jsonconfig = self.load_config(json_config_path)
         self.name = jsonconfig['name']
         self.type = jsonconfig['type']
         self.subtype = jsonconfig['subtype']
@@ -116,16 +115,10 @@ class SimpleColConfig():
                 writecounter+=1
             fw.close()
         print(f"Written to: '{filename}'")
-
-# load from sampleconfig file
-sampleconfig={}
-with open("sampleconfigs/simpleconfig1.json","r") as fp:
-    sampleconfig=json.load(fp)
-    fp.close()
-
-# generate config file
-print(sampleconfig)
-config1=SimpleColConfig(sampleconfig,NUM_ROWS)
-config1.construct_generator()
-
-# {"name": "Sample Column 1", "type": "AlphaNumeric", "subtype": "string", "minLen": "5", "maxLen": "20", "rangeType": "predefined", "range": "alphabets", "variance": "ignore", "colPosn": "ignore", "unique": "ignore", "dupFactor": "ignore", "relation": "ignore", "template": "ignore", "custom": "ignore"}
+    
+    def load_config(self,path):
+        sampleconfig = {}
+        with open(path,"r") as fp:
+            sampleconfig=json.load(fp)
+            fp.close()
+        return sampleconfig
