@@ -9,7 +9,6 @@ Methods to generate:
 '''
 from random import Random
 
-
 class SimpleRandomGenerator:
     '''
     Simple random generated base class, can override as well as add new functions accroding to requirement

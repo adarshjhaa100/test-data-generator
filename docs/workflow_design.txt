@@ -45,7 +45,7 @@ Detialed Workflow:
         rangeType:  string, 
                     select,
                     start-end by default,
-                    List elements: (start-end, from-list(maxlen and minlen will be ingored), char-from-list, predefined) 
+                    List elements: (start-end, from-list(maxlen and minlen will be ignored), char-from-list, predefined) 
         range:      string, 
                     text,
                     NotNull 

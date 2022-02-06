@@ -66,6 +66,12 @@ class SimpleColConfig():
                 gen_string=self.rng.element_from_list(fromlist)
                 columnValues.append(gen_string)
 
+        if self.rangeType.upper()=="CHAR-FROM-LIST":
+            fromlist=self.range
+            for _ in range(self.noofrows):
+                gen_string=self.rng.random_alphanum(self.minLen, self.maxLen, fromlist)
+                columnValues.append(gen_string)
+
         self.savetofile(columnValues,"csv")
             
         

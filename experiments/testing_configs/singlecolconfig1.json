@@ -1,0 +1,2 @@
+{"name": "Sample Column 1", "type": "numeric", "subtype": "int", "minLen": "5", "maxLen": "20", "rangeType": "start-end", "range": [-10000,10000], "variance": "ignore", "colPosn": "ignore", "unique": "ignore", "dupFactor": "ignore", "relation": "ignore", "template": "ignore", "custom": "ignore"}
+    
