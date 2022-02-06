@@ -13,3 +13,12 @@
 
 <p> For active development progress, switch to <a href="https://github.com/adarshjhaa100/test-data-generator/tree/dev" alt="dev">dev</a> branch </p>
 
+<div id="ele"></div>
+<button>Click Here</button>
+<!-- <script>
+   const ele = document.getElementById("ele");
+   
+   fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+<script> -->
