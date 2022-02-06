@@ -1,12 +1,12 @@
 import json
-from simplerandomgenerator import SimpleRandomGenerator
+from rngs.simplerandomgenerator import SimpleRandomGenerator
 from datetime import datetime
 import time
 
 NUM_ROWS=20000
 
 class SimpleColConfig():
-    
+    ''' Class to generate "simple" columns (with type and reange defined) '''
     def __init__(self, jsonconfig, noofrows) -> None:
         self.name = jsonconfig['name']
         self.type = jsonconfig['type']
@@ -27,6 +27,7 @@ class SimpleColConfig():
         self.rng=SimpleRandomGenerator()
 
     def construct_generator(self):
+        ''' calls other function according to type and subtype specified'''
         print(self.type, self.subtype)
         if(self.type.upper()=="NUMERIC"):
             print("numeric")
@@ -39,7 +40,9 @@ class SimpleColConfig():
                 print("FLOAT")
                 self.generatefloat()             
     
+
     def generatestring(self):
+        ''' Generate string from a set of predefined strings or a given character list'''
         fromlist, columnValues=[],[self.name]
         
         if(self.rangeType.upper()=="PREDEFINED"):
@@ -67,6 +70,7 @@ class SimpleColConfig():
             
         
     def generatefloat(self):
+        ''' Generate floats given range or list alongwith precision '''
         fromlist, columnValues=[],[self.name]
         if self.rangeType.upper()=="START-END":
            
@@ -84,6 +88,7 @@ class SimpleColConfig():
         self.savetofile(columnValues,"csv")    
 
     def generateint(self):
+        ''' generate integers within range or from a list '''
         fromlist, columnValues=[],[self.name]
         if self.rangeType.upper()=="START-END":
             minval,maxval=int(self.range[0]), int(self.range[1])
@@ -100,6 +105,7 @@ class SimpleColConfig():
 
 
     def generateinit(self):
+        ''' Igonre this for now '''
         for k in self.jsonconfig:
             print("self."+k+" = "+"jsonconfig[\'"+k+"\']")
 
@@ -115,9 +121,10 @@ class SimpleColConfig():
             fw.close()
         print(f"Written to: '{filename}'")
 
+
 # load from sampleconfig file
 sampleconfig={}
-with open("sampleconfigs/simpleconfig1.json","r") as fp:
+with open("sampleconfigs/singlecolconfig1.json","r") as fp:
     sampleconfig=json.load(fp)
     fp.close()
 
