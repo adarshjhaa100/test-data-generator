@@ -1,0 +1,3 @@
+- [X] seperate constants, classes and user of class
+- [X] complete SimpleColGenerator.py
+- [ ] create packages 
